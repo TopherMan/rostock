@@ -8,7 +8,7 @@ h = 450;
 w = 283;
 corner = 40;
 
-module plywood() {
+module plywood(bottom) {
   difference() {
     //intersection() {
 //      cube([2*radius, 300, 9], center=true);
@@ -22,6 +22,12 @@ module plywood() {
 	  cylinder(r=2.2, h=20, center=true, $fn=12);
 	translate([30, radius-8, 0])
 	  cylinder(r=2.2, h=20, center=true, $fn=12);
+	if (bottom) {
+	translate([-30, radius-44, 0])
+	  cylinder(r=2.2, h=20, center=true, $fn=12);
+	translate([30, radius-44, 0])
+	  cylinder(r=2.2, h=20, center=true, $fn=12);
+	}
    translate([0,radius2,0])
      cube([80,60,thickness+1],center=true);
    translate([0,-170,0])
@@ -56,15 +62,15 @@ module sidepanel() {
 //% rotate([180,0,0]) translate([0,-radius-4,0]) motor_end();
 
 
-translate([0, 0, h-thickness/2]) plywood();
-translate([0, 0, thickness/2]) plywood();
+translate([0, 0, h-thickness/2]) plywood(0);
+translate([0, 0, thickness/2]) plywood(1);
 
 for (a = [0, 120, 240]) {
 rotate([0,0,a]) translate([-w/2,-140-thickness,0]) frontpanel();
 rotate([0,0,a]) translate([w/2+thickness/2,-140-thickness,0]) rotate([0,0,60]) sidepanel();
 }
 
-%translate([0,0,thickness]) cylinder(r=125,h=thickness,center=true);
+//%translate([0,0,thickness]) cylinder(r=125,h=thickness,center=true);
 
 //% translate([0, offset, 0]) cylinder(r=radius2, h=10, center=true, $fn=6);
 
