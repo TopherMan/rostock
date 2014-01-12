@@ -4,7 +4,7 @@ radius3 = radius2/cos(30)/2;
 //offset = 150-radius;
 offset = 0;
 thickness = 9;
-h = 450;
+h = 914*2/3;
 w = 283;
 corner = 40;
 
@@ -41,11 +41,11 @@ module frontpanel() {
    difference() {
 	cube([w,thickness,h]);
 	difference(){
-	translate([w*.125,-.5,h*.125]) cube([w*.75,thickness+1,h*.75]);
-	translate([w*.125,5,h*.125]) rotate([0,45,0]) translate([0,-1,0]) cube([corner,thickness+2,corner],center=true);
-	translate([w*(.125+.75),5,h*.125]) rotate([0,45,0]) translate([0,-1,0]) cube([corner,thickness+2,corner],center=true);
-	translate([w*.125,5,h*(.125+.75)]) rotate([0,45,0]) translate([0,-1,0]) cube([corner,thickness+2,corner],center=true);
-	translate([w*(.125+.75),5,h*(.125+.75)]) rotate([0,45,0]) translate([0,-1,0]) cube([corner,thickness+2,corner],center=true);
+	translate([w*.125,-.5,-h*.125]) cube([w*.75,thickness+1,h*2*.75]);
+	//translate([w*.125,5,h*.125]) rotate([0,45,0]) translate([0,-1,0]) cube([corner,thickness+2,corner],center=true);
+	//translate([w*(.125+.75),5,h*.125]) rotate([0,45,0]) translate([0,-1,0]) cube([corner,thickness+2,corner],center=true);
+	//translate([w*.125,5,h*(.125+.75)]) rotate([0,45,0]) translate([0,-1,0]) cube([corner,thickness+2,corner],center=true);
+	//translate([w*(.125+.75),5,h*(.125+.75)]) rotate([0,45,0]) translate([0,-1,0]) cube([corner,thickness+2,corner],center=true);
 	}
 	}
 }
