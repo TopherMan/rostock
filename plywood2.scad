@@ -25,7 +25,7 @@ boardlength=radius+extralength;
 		  cylinder(r=2.2, h=h2, center=true, $fn=12);
 		//slot for belts
 		translate([radius+11,0,0])
-		  cube([22,belt_gap,h2],center=true);
+		  cube([26,belt_gap,h2],center=true); //bottom board uses 22 in original copy
 		//holes for center_board
 		translate([radius_c/2,30,0])
 		  cylinder(r=2.2, h=h2, center=true, $fn=12);
